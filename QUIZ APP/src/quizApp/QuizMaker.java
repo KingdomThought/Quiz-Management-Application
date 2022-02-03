@@ -27,10 +27,11 @@ public class QuizMaker {
 	
 	ArrayList<String> possibleAnswers = new ArrayList<String>();
 
-	public void questionInput() {
+	public void startBuildQuiz() {
 		
-		System.out.println("***Welcome to The TRINITY GROUP QuizMakerPRO***");
-		System.out.println("*** This Software Was Designed to Build Quizzes for Students***");
+		System.out.println("QUIZZ WIZZ PRO --- VERSION.1");
+		System.out.println("QUIZ MAKER WIZARD \n"
+				+ "");
 		System.out.println("*** Please Follow These Instructions:***");
 		System.out.println(" 1) You will be prompted to enter quiz Question");
 		System.out.println(" 2) You will be prompted to enter the correct  answer for question");
@@ -40,7 +41,14 @@ public class QuizMaker {
 		
 		Scanner in = new Scanner(System.in);
 		Scanner in2= new Scanner (System.in);
+        Scanner inputNumQues = new Scanner(System.in);
 		
+		System.out.println("How many questions will this quiz consist of? must Select a number between 1 and 10.");
+		numOfQuestions=inputNumQues.nextInt();
+		while (numOfQuestions >10 || numOfQuestions < 1) {
+			
+			System.out.println("Please Try again. Must enter a number between 1 and 10");
+			numOfQuestions=inputNumQues.nextInt();}
 			int c = 1;
 			System.out.print("Question # " + i + " Please Enter Question You Wish To Record \n");
 			question = in.nextLine();
@@ -88,7 +96,7 @@ public class QuizMaker {
 			
 i++;
 		}
-		
+	
 /*
 		possibleAnswers.add(0, incorrectAlternateOne);
 		possibleAnswers.add(0, incorrectAlternateTwo);
