@@ -55,10 +55,19 @@ public class QuizMaker {
 
 		Scanner in = new Scanner(System.in);
 		Scanner in2 = new Scanner(System.in);
+		Scanner inputNumQues = new Scanner(System.in);
+		
+		System.out.println("How many questions will this quiz consist of? must Select a number between 1 and 10.");
+		numOfQuestions=inputNumQues.nextInt();
+		while (numOfQuestions >10 || numOfQuestions < 1) {
+			
+			System.out.println("Please Try again. Must enter a number between 1 and 10");
+			numOfQuestions=inputNumQues.nextInt();
+		}
 
 		// This while loop is the Question Loop, it will loop for the
 		//questions in the given quiz.
-		while (i <= 3) {
+		while (i <= numOfQuestions) {
 			int c = 1;
 			System.out.print("Question # " + i + " Please Enter Question You Wish To Record \n");
 			question = in.nextLine();
